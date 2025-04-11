@@ -4,6 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "tailwindcss build -o static/css/tailwind.css",
     "build": "tailwindcss build -o static/css/tailwind.css --minify",
     "watch": "tailwindcss build -o static/css/tailwind.css --watch"
   },

@@ -12,8 +12,8 @@ install:
 init:
 	@npx tailwindcss init
 	@echo "Creating tailwind.css..."
-	@mkdir -p assets/css
-	@echo "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > assets/css/tailwind.css
+	@mkdir -p static/css
+	@npm run dev
 
 build-local:
 	@go build -o ./bin/main cmd/main/main.go
