@@ -1,6 +1,6 @@
 .PHONY: build-local build templ notify-templ-proxy run install init
 
-BINARY_NAME=spendings
+BINARY_NAME=gotailwinds
 -include .env
 
 install:
