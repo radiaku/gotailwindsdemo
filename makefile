@@ -5,6 +5,8 @@ BINARY_NAME=spendings
 
 install:
 	@go install github.com/a-h/templ/cmd/templ@latest
+	@go get -u github.com/a-h/templ
+	@npm init -y
 	@npm install -D tailwindcss
 
 init:
