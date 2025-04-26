@@ -4,8 +4,8 @@ root = "."
 tmp_dir = "bin"
 
 [build]
-  bin = "./bin/main"
-  cmd = "templ generate && go build -o ./bin/main ./cmd/web/main.go"
+  bin = "./bin/main.exe"
+  cmd = "templ generate && go build -o ./bin/main.exe ./cmd/web/main.go"
   delay = 1000
   exclude_dir = ["static", "node_modules", "assets"]
   exclude_regex = [".*_templ.go"]
