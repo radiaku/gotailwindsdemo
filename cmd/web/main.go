@@ -2,23 +2,35 @@
 package main
 
 import (
-    "log"
-    "net/http"
+	"log"
+	"net/http"
+	"os"
 
-    "go_tailwindws/view"
-    "go_tailwindws/view/layout"
-    "go_tailwindws/view/partial"
-    "github.com/a-h/templ"
+	"go_tailwindws/view"
+	"go_tailwindws/view/layout"
+	"go_tailwindws/view/partial"
+
+	"github.com/a-h/templ"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-    fs := http.FileServer(http.Dir("./static"))
-    http.Handle("/static/", http.StripPrefix("/static/", fs))
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 
-    c := layout.Base(view.Index())
-    http.Handle("/", templ.Handler(c))
+	port := os.Getenv("APP_PORT")
+	if port == "" {
+		port = "8080" // fallback default
+	}
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-    http.Handle("/foo", templ.Handler(partial.Foo()))
+	c := layout.Base(view.Index())
+	http.Handle("/", templ.Handler(c))
 
-    log.Fatal(http.ListenAndServe(":8080", nil))
+	http.Handle("/foo", templ.Handler(partial.Foo()))
+
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
