@@ -8,6 +8,7 @@ install:
 	@go get -u github.com/a-h/templ
 	@npm init -y
 	@npm install -D tailwindcss
+	@mkdir -p bin
 
 init:
 	@npx tailwindcss init
@@ -25,7 +26,7 @@ build:
 templ:
 	@TEMPL_EXPERIMENT=rawgo templ generate --watch --proxy=http://localhost:$(APP_PORT) --proxyport=$(TEMPL_PROXY_PORT) --open-browser=false --proxybind="0.0.0.0"
 
-notify-templ-proxy:
+notify:
 	@templ generate --notify-proxy --proxyport=$(TEMPL_PROXY_PORT)
 
 run:

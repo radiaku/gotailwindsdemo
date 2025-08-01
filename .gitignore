@@ -1,3 +1,5 @@
 /node_modules
-/bin
+/bin/
 /temp
+/view/*.go
+/view/**/*.go
