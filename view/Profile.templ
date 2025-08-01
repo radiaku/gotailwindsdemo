@@ -1,0 +1,48 @@
+package view
+
+templ Profile() {
+    <div class="max-w-sm mx-auto p-4 rounded-xl bg-white shadow-sm">
+        <div class="flex flex-col items-center text-center space-y-4">
+            <img src="https://avatars.githubusercontent.com/u/5983350" alt="Profile photo" class="w-32 h-32 rounded-xl object-cover"/>
+
+            <div>
+                <h2 class="text-xl font-semibold flex items-center justify-center gap-1">
+                    Radia
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.707-9.707a1 1 0 00-1.414-1.414L9 9.586 8.707 9.293a1 1 0 00-1.414 1.414l1 1a1 1 0 001.414 0l3-3z" clip-rule="evenodd" />
+                    </svg>
+                </h2>
+                <p class="text-gray-500 text-sm mt-1">
+                    I design web and mobile apps that not only work seamlessly but also drive revenue growth for businesses.
+                </p>
+            </div>
+
+            <div class="flex justify-center gap-8 mt-2 text-sm text-gray-700 font-semibold">
+                <div>
+                    <p class="text-black text-base">600</p>
+                    <p>Followers</p>
+                </div>
+                <div>
+                    <p class="text-black text-base">100</p>
+                    <p>Post</p>
+                </div>
+            </div>
+
+            <button class="mt-2 px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition font-medium">
+                + Follow
+            </button>
+        </div>
+
+        <div class="mt-6">
+            <h3 class="text-lg font-semibold mb-2">My Work</h3>
+            <div class="grid grid-cols-3 gap-2">
+                <img src="/static/images/work1.png" alt="" class="rounded-lg"/>
+                <img src="/static/images/work2.png" alt="" class="rounded-lg"/>
+                <img src="/static/images/work3.png" alt="" class="rounded-lg"/>
+                <img src="/static/images/work4.png" alt="" class="rounded-lg"/>
+                <img src="/static/images/work5.png" alt="" class="rounded-lg"/>
+                <img src="/static/images/work6.png" alt="" class="rounded-lg"/>
+            </div>
+        </div>
+    </div>
+}

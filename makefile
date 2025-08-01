@@ -12,8 +12,8 @@ install:
 
 init:
 	@npx tailwindcss init
-	@echo "Creating tailwind.css..."
 	@mkdir -p static/css
+	@printf "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n" > static/css/input.css
 	@npm run dev
 
 build-local:
@@ -25,6 +25,9 @@ build:
 
 templ:
 	@TEMPL_EXPERIMENT=rawgo templ generate --watch --proxy=http://localhost:$(APP_PORT) --proxyport=$(TEMPL_PROXY_PORT) --open-browser=false --proxybind="0.0.0.0"
+
+tailwind:
+	@npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --watch
 
 notify:
 	@templ generate --notify-proxy --proxyport=$(TEMPL_PROXY_PORT)

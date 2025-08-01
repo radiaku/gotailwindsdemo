@@ -4,9 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx tailwindcss build -o static/css/tailwind.css",
-    "build": "npx tailwindcss build -o static/css/tailwind.css --minify",
-    "watch": "npx tailwindcss build -o static/css/tailwind.css --watch"
+    "dev": "npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css",
+    "build": "npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --minify",
+    "watch": "npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

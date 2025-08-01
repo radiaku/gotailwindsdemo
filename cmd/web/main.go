@@ -7,7 +7,6 @@ import (
 	"os"
 
 	"go_tailwindws/view"
-	"go_tailwindws/view/layout"
 	"go_tailwindws/view/partial"
 
 	"github.com/a-h/templ"
@@ -27,8 +26,7 @@ func main() {
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	c := layout.Base(view.Index())
-	http.Handle("/", templ.Handler(c))
+	http.Handle("/", templ.Handler(view.Index()))
 
 	http.Handle("/foo", templ.Handler(partial.Foo()))
 

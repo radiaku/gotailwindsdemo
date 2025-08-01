@@ -11,10 +11,12 @@ templ Base(children ...templ.Component) {
             <!-- tailwind css -->
             <link href="/static/css/tailwind.css" rel="stylesheet"/>
         </head>
-        <body>
-            for _, child := range children {
-                @child
-            }
+        <body class="bg-gray-50 text-gray-900 font-sans">
+            <div class="min-h-screen px-4 py-6">
+                for _, child := range children {
+                    @child
+                }
+            </div>
             <!-- htmx -->
             <script src="https://unpkg.com/htmx.org@1.9.10"></script>
         </body>
