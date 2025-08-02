@@ -27,7 +27,6 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.Handle("/", templ.Handler(view.Index()))
-
 	http.Handle("/foo", templ.Handler(partial.Foo()))
 
 	log.Fatal(http.ListenAndServe(":"+port, nil))
