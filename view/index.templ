@@ -1,7 +1,11 @@
 package view
 
-import "go_tailwindws/view/layout"
-import "go_tailwindws/view/partial"
+
+import (
+    "go_tailwindws/view/layout"
+    partial "go_tailwindws/view/partial"
+    pages "go_tailwindws/view/pages"
+)
 
 templ Index() {
     @layout.Base(content())
@@ -13,7 +17,7 @@ templ content() {
             @partial.Sidebar()
         </div>
         <div class="md:col-span-3">
-            @Profile()
+            @pages.Profile()
         </div>
     </div>
 
