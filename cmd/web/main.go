@@ -6,10 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"go_tailwindws/view"
-	"go_tailwindws/view/partial"
-
-	"github.com/a-h/templ"
+	"go_tailwindws/routes"
 	"github.com/joho/godotenv"
 )
 
@@ -26,8 +23,8 @@ func main() {
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	http.Handle("/", templ.Handler(view.Index()))
-	http.Handle("/foo", templ.Handler(partial.Foo()))
+	r := routes.NewRouter()
 
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Printf("Listening on :%s", port)
+	log.Fatal(http.ListenAndServe(":"+port, r))
 }

@@ -1,8 +1,23 @@
 package view
 
 import "go_tailwindws/view/layout"
+import "go_tailwindws/view/partial"
 
 templ Index() {
-    @layout.Base(Profile())
+    @layout.Base(content())
 }
+
+templ content() {
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="md:col-span-1">
+            @partial.Sidebar()
+        </div>
+        <div class="md:col-span-3">
+            @Profile()
+        </div>
+    </div>
+
+    @partial.Footer()
+}
+
 
