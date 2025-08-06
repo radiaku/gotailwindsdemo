@@ -18,6 +18,7 @@ func NewRouter() http.Handler {
 
 	// Routes
 	r.Method("GET", "/", templ.Handler(view.Index()))
+	r.Method("GET", "/", templ.Handler(view.Single()))
 
 
 

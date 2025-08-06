@@ -1,0 +1,27 @@
+package view
+
+
+import (
+    "go_tailwindws/view/layout"
+    partial "go_tailwindws/view/partial"
+    pages "go_tailwindws/view/pages"
+)
+
+templ Single() {
+    @layout.Base(SingleContent())
+}
+
+templ SingleContent() {
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="md:col-span-1">
+            @partial.Sidebar()
+        </div>
+        <div class="md:col-span-3">
+            @pages.Profile()
+        </div>
+    </div>
+
+    @partial.Footer()
+}
+
+
